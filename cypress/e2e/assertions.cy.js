@@ -9,6 +9,6 @@ describe('Different types of assertions', () => {
     })
 
     it('displays three options in box 1', () => {
-        cy.get('[data-cy=box-1-items-list] > li').should('have.length', 3);
+        cy.get('[data-cy=box-1-items-list] > li').should('have.length', 3).debug();
     })
 })
