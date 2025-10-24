@@ -1,7 +1,7 @@
 describe('Max character input functionality', () => {
 
     beforeEach(() => {
-        cy.visit('http://localhost:5173/example-3')
+        cy.visit('/example-3')
 
         cy.get('span[data-cy=first-name-chars-left-count]').as('fnCharsLeft')
         cy.get('#first-name-input').as('fnInput')
