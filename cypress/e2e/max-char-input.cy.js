@@ -1,3 +1,6 @@
+// Activating code completion/suggestions for Cypress commands
+/// <reference types="Cypress"/>
+
 describe('Heading Text', () => {
   it('contains title of our site', () => {
     const e2Path = Cypress.env('EXAMPLE_2_PATH')
