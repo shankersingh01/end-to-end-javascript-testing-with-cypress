@@ -5,5 +5,6 @@ describe('Heading Text', () => {
     cy.get('span').invoke('text').should('equal', '15')
     cy.get('input').type('Hello')
     cy.get('span').invoke('text').should('equal', '10')
+    // special characters can be added using {} notation like {shift}, {alt}, {ctrl}, {meta}, {enter}, {backspace}, {del}, {esc}, {upArrow}, {downArrow}, {leftArrow}, {rightArrow}
   })
 })
