@@ -4,10 +4,17 @@ describe('', () => {
         cy.visit('/example-4');
     })
 
+    //Filter and not commands
+    it('Filters and shows 3 li items in box 1', () => {
+        cy.get('ul[data-cy=box-1-items-list] > li').filter('.box-1-list-item').should('have.length', 3);
+        cy.get('ul[data-cy=box-1-items-list] > li').not('.extra-li').should('have.length', 3);
+    })
+
     it('Sets the header text to the item name when double clicked', () => {
         cy.get('ul[data-cy=box-1-items-list] > li').eq(0).dblclick();
         cy.get('span[data-cy=box-1-selected-name]').invoke('text').should('equal', 'Option One');
     })
+
 
     it('displays the correct number of checked options', () => {
         cy.get('span[data-cy=box-2-selected-count]').invoke('text').should('equal', '0');
