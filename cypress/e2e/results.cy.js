@@ -8,15 +8,17 @@ describe('Max character input functionality', () => {
     })
 
     // Alias the elements for easier reference
-    cy.get('span[data-cy=first-name-chars-left-count]').as('fnCharsLeft')
+    cy.get('span[data-cy=first-name-chars-left-count]').invoke('text').as('fnCharsLeft')
     cy.get('#first-name-input').as('fnInput')
     
     // Initial assertion
-    cy.get('@fnCharsLeft').invoke('text').should('equal', '15')
+    cy.get('@fnCharsLeft')
+      .should('exist')
+      .and('equal', '15')
     // Type into the input and assert the remaining characters
     cy.get('@fnInput').type('Hello')
     // Final assertions
-    cy.get('@fnCharsLeft').invoke('text').should('equal', '10')
+    cy.get('@fnCharsLeft').should('equal', '10')
     // Verify the input value
     cy.get('@fnInput').should('have.value', 'Hello')
   })
