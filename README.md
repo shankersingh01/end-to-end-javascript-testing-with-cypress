@@ -71,6 +71,21 @@ npx cypress run
 
 This will run all tests in headless mode and generate test results in the terminal.
 
+### 3. Running Tests with Cypress Cloud
+
+To run tests and record results in Cypress Cloud (required for cy.prompt command):
+
+```bash
+npx cypress run --record --key <record key>
+```
+
+Important Cloud Configuration:
+
+- Project ID
+- Record Key
+
+Note: The cy.prompt command requires tests to be run through Cypress Cloud to work properly.
+
 ## Project Structure
 
 - `/cypress`
@@ -99,7 +114,6 @@ The following test files are available in the `cypress/e2e` directory:
 The Cypress configuration is in `cypress.config.js`. Key settings include:
 
 - Base URL: http://localhost:5173
-- Project ID: v34v29
 - Experimental features: Prompt testing enabled
 
 ## Additional Information
